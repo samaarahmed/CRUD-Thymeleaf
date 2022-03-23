@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Management System</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+<div class="container" >
+    <h1> All Players List </h1>
+    <table class="table table-striped table-info">
+    <thead>
+    <tr>
+        <th>PlayerFirstName </th>
+        <th>PlayerLastName</th>
+        <th>PlayerEmail</th>
+    </tr>
+    </thead>
+        <tr th:each="player : ${playerlist}">
+            <td th:text="${player.firstName}"></td>
+            <td th:text="${player.lastName}"></td>
+            <td th:text="${player.email}"></td>
+
+        </tr>
+
+    </table>
+
+    <a th:href="@{/showNewPlayerForm}" class="btn btn-primary"> AddNewPlayer</a>
+
+
+</div>
+
+</body>
+</html>
